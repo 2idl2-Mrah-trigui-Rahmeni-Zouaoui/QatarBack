@@ -1,12 +1,15 @@
 package com.example.tp1.controller;
 
 import com.example.tp1.entities.User;
+import com.example.tp1.entities.UserDto;
 import com.example.tp1.repository.UserRepository;
+import com.example.tp1.service.UserService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
 import javax.validation.Valid;
 import java.util.List;
 
@@ -19,6 +22,13 @@ public class UserController {
     @Autowired
     UserRepository userv;
 
+    @Autowired
+    private UserService userService;
+
+    @RequestMapping(value="/signup", method = RequestMethod.POST)
+    public User saveUser(@RequestBody UserDto user){
+        return userService.save(user);
+    }
 
     //@PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/users")

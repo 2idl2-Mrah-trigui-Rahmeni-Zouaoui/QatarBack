@@ -1,5 +1,4 @@
 package com.example.tp1.controller;
-
 import com.example.tp1.entities.Equipe;
 import com.example.tp1.entities.Joueur;
 import com.example.tp1.repository.EquipeRepository;

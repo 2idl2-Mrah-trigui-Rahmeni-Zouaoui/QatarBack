@@ -27,7 +27,7 @@ public class Staff implements Serializable {
     }
 
     //constructor
-    public Staff(Long id, String nom, String prenom, String role, String club, Equipe equipe) {
+    public Staff(Long id, String nom, String prenom, String role, String club,Equipe equipe) {
         this.id = id;
         this.nom = nom;
         this.prenom = prenom;
